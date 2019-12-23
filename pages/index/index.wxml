@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="main">
+  <image src="../../img/banner.png" class="banner"/>
+  <view class="nav">
+    <view wx:for="{{nav}}" wx:key="{{index}}">
+      <image src="{{'../../img/icon'+(index+1)+'.png'}}"/>
+      <text>{{item}}</text>
+    </view>
+
+  </view>
+  <view class="kv">
+    <image src="../../img/kv.png"/>
+  </view>
+  <view class="newsTips">{{tips}}</view>
+  <view class="newsList">
+    <view>
+      <image src="../../img/banner.png"/>
+      <text class="title">这里是标题</text>
+      <text class="content">这里是内容</text>
+      <text class="time">2019年12月23日</text>
+    </view>
+  </view>
+  <view class="list">
+    <image src="../../img/img1.png"/>
+    <image src="../../img/img2.png"/>
+    <image src="../../img/img3.png"/>
+  </view>
+  <view class="footer">一切解释权归建材商贸所有</view>
+</view>
