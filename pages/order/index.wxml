@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="main">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="order">
+      <text class="title">{{item.title}}</text>
+      <block wx:if="{{item.status==1}}">
+        <text class="status s1">审核中</text>
+      </block>
+      <block wx:elif="{{item.status==2}}">
+        <text class="status s2">待付款</text>
+      </block>
+      <block wx:else>
+        <text class="status s3">已付款</text>
+      </block>
+      <view class="order-item">
+        <view class="name">姓名：{{item.name}}</view>
+        <view class="phone">手机：{{item.phone}}</view>
+        <view class="time">下单时间：{{item.time}}</view>
+      </view>
+      <view class="btn">查看详情</view>
+    </view>
+  </block>
+</view>

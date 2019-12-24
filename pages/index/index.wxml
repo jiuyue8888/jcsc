@@ -11,14 +11,30 @@
   <view class="kv">
     <image src="../../img/kv.png"/>
   </view>
-  <view class="newsTips">{{tips}}</view>
+  <view class="newsTips">
+    <swiper autoplay="true" interval="2000" circular="true" vertical="true">
+      <block wx:for="{{tips}}" wx:key="*this">
+        <swiper-item>
+          <text>{{item}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <image src="../../img/right.png" class="right"/>
+
+  </view>
   <view class="newsList">
-    <view>
-      <image src="../../img/banner.png"/>
-      <text class="title">这里是标题</text>
-      <text class="content">这里是内容</text>
-      <text class="time">2019年12月23日</text>
-    </view>
+    <image class="news-title" src="../../img/newt.png"/>
+    <block wx:for="{{newsList}}" wx:key="{{index}}">
+      <view class="nList">
+        <image src="{{item.img}}"/>
+        <view class="nList-body">
+          <text class="title">{{item.title}}</text>
+          <text class="content">{{item.content}}</text>
+          <text class="time">{{item.time}}</text>
+        </view>
+      </view>
+    </block>
+
   </view>
   <view class="list">
     <image src="../../img/img1.png"/>

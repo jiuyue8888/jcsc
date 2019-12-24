@@ -1,0 +1,118 @@
+.main{
+position:relative;
+width:100%;
+overflow:hidden;
+min-height:100vh;
+background:rgba(244,244,244,1);
+}
+.order{
+position:relative;
+width:90%;
+overflow:hidden;
+margin:20rpx auto 0;
+background:#fff;
+box-sizing:border-box;
+padding:20rpx;
+border-radius:10rpx;
+}
+.order-item{
+position:relative;
+width:100%;
+box-sizing:border-box;
+padding-left:130rpx;
+display:block;
+font-size:26rpx;
+color:#666;
+
+
+}
+.order-item::before{
+           position:absolute;
+           top:0;
+           left:0;
+           width:100rpx;
+           height:100rpx;
+           line-height:100rpx;
+           text-align:center;
+           color:#fff;
+           font-size:26rpx;
+           content:'订单';
+           background:#F5DC77;
+
+           }
+.status{
+position:absolute;
+top:20rpx;
+right:20rpx;
+display:block;
+font-size:24rpx;
+color:#ADADAD;
+line-height:48rpx;
+}
+.s1{
+color:#A6A40D;
+}
+.s2{
+color:#D41E40;
+}
+.s3{
+color:#0DA626;
+}
+.title{
+position:relative;
+width:100%;
+box-sizing:border-box;
+padding-left:50rpx;
+display:block;
+font-size:32rpx;
+color:#464646;
+line-height:48rpx;
+margin-bottom:20rpx;
+padding-bottom:20rpx;
+border-bottom:1px solid #f5f5f5;
+}
+.title::before{
+position:absolute;
+top:0;
+left:0;
+width:42rpx;
+height:42rpx;
+line-height:42rpx;
+text-align:center;
+color:#fff;
+font-size:14rpx;
+content:'订购';
+background:#79BDF9;
+border-radius:50%;
+}
+.content{
+position:relative;
+width:100%;
+box-sizing:border-box;
+padding-right:10rpx;
+display:block;
+font-size:24rpx;
+color:#ADADAD;
+line-height:48rpx;
+overflow:hidden;
+text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.btn{
+float:right;
+width:151rpx;
+height:59rpx;
+line-height:59rpx;
+text-align:center;
+color:#fff;
+font-size:26rpx;
+background:#79BDF9;
+border-radius:20rpx;
+}
+.time{
+
+display:block;
+font-size:26rpx;
+
+
+}

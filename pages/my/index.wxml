@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="main">
+  <view class="user">
+    <image src="../../img/mybg.png" class="banner"/>
+    <image src="{{pic}}" class="pic"/>
+    <text>{{name}}</text>
+  </view>
+
+  <view class="part">
+    <navigator class="partList" url="../order/index">
+      <image src="../../img/myIcon1.png" class="icon"/>
+      <text>我的订单</text>
+      <image src="../../img/right1.png" class="right"/>
+    </navigator>
+    <navigator class="partList">
+      <image src="../../img/myIcon2.png" class="icon"/>
+      <text>我要提现</text>
+      <text class="money">余额 <text class="color">{{num}}</text> 元</text>
+      <image src="../../img/right1.png" class="right"/>
+    </navigator>
+    <navigator class="partList">
+      <image src="../../img/myIcon3.png" class="icon"/>
+      <text>邀请好友</text>
+      <image src="../../img/right1.png" class="right"/>
+    </navigator>
+  </view>
+  <view class="part">
+    <view class="partList" bindtap="call">
+      <image src="../../img/myIcon4.png" class="icon"/>
+      <text>联系客服</text>
+      <image src="../../img/right1.png" class="right"/>
+    </view>
+    <navigator class="partList">
+      <image src="../../img/myIcon5.png" class="icon"/>
+      <text>系统说明</text>
+      <image src="../../img/right1.png" class="right"/>
+    </navigator>
+  </view>
+</view>

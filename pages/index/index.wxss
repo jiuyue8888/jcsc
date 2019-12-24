@@ -1,7 +1,7 @@
 .main{
 position:relative;
 width:100%;
-padding-bottom:100rpx;
+padding-bottom:10rpx;
 }
 .banner{
 position:relative;
@@ -49,7 +49,7 @@ color:#ccc;
 }
 .list{
 position:relative;
-width:94%;
+width:90%;
 margin:0 auto;
 background:#fff;
 display:flex;
@@ -60,4 +60,103 @@ width:220rpx;
 height:170rpx;
 box-shadow:0 0 20rpx #d5d5d5;
 border-radius:5rpx;
+}
+.newsTips{
+    position:relative;
+    width:90%;
+    height:90rpx;
+    line-height:90rpx;
+    margin:0 auto;
+    border-top:1px solid rgba(0,0,0,0.1);
+}
+.newsTips swiper{
+position:relative;
+margin-top:25rpx;
+height:40rpx;
+color:#616668;
+line-height:40rpx;
+width:100%;
+padding-left:80rpx;
+padding-right:60rpx;
+box-sizing:border-box;
+}
+.newsTips swiper::before{
+position:absolute;
+left:0;
+top:5rpx;
+width:60rpx;
+height:30rpx;
+text-align:center;
+line-height:30rpx;
+content:'通知';
+border:1px solid #79BDF9;
+color:#79BDF9;
+font-size:20rpx;
+border-radius:4rpx;
+}
+.newsTips .right{
+position:absolute;
+top:50%;
+right:0;
+margin-top:-14rpx;
+width:11rpx;
+height:20rpx;
+}
+.newsList{
+    position:relative;
+    width:100%;
+    border-top:15rpx solid rgba(251,251,251,1);
+}
+.nList-body{
+    position:relative;
+    width:100%;
+    height:153rpx;
+    box-sizing:border-box;
+    padding-left:170rpx;
+}
+.news-title{
+display:block;
+position:relative;
+width:124rpx;
+height:30rpx;
+margin:30rpx auto;
+}
+.nList{
+position:relative;
+width:90%;
+height:153rpx;
+margin:0 auto 33rpx;
+overflow:hidden;
+padding-bottom:33rpx;
+border-bottom:1px solid rgba(238,238,238,1);
+}
+.nList image{
+position:absolute;
+top:0;
+left:0;
+width:153rpx;
+height:153rpx;
+}
+.title{
+display:block;
+font-size:28rpx;
+color:#000;
+margin-bottom:10rpx;
+}
+.content{
+display:block;
+font-size:24rpx;
+color:#A9A9A9;
+height:66rpx;
+overflow:hidden;
+line-height:33rpx;
+text-indent:1em;
+}
+.time{
+display:block;
+position:absolute;
+left:170rpx;
+bottom:0;
+font-size:24rpx;
+color:#A9A9A9;
 }
