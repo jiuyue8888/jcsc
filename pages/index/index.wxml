@@ -1,8 +1,16 @@
 <!--index.wxml-->
 <view class="main">
-  <image src="../../img/banner.png" class="banner"/>
+
+  <swiper class="banner" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
   <view class="nav">
-    <view wx:for="{{nav}}" wx:key="{{index}}" bindtap="navClick">
+    <view wx:for="{{nav}}" wx:key="{{index}}" bindtap="navClick" data-id="{{index}}">
       <image src="{{'../../img/icon'+(index+1)+'.png'}}"/>
       <text>{{item}}</text>
     </view>

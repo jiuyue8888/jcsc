@@ -61,7 +61,7 @@ margin-bottom:20rpx;
 .order{
 position:relative;
 }
-.order text{
+.order .picker{
 float:right;
 color:#79BDF9;
 }
@@ -73,6 +73,11 @@ font-size:26rpx;
 color:#ccc;
 box-sizing:border-box;
 padding:30rpx;
+}
+.address input{
+right:20rpx;
+left:auto;
+text-align:right;
 }
 button{
 display:block;

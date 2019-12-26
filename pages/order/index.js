@@ -27,6 +27,11 @@ Page({
         status:"3"
       }
     ]
+  },
+  onLoad:function(){
+    app.dataShow(app.globalData.api.orderList,'GET',function(res){
+      console.log(res);
+    })
   }
 
 })
