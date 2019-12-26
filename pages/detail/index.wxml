@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="main">
+
+  <view class="mess-content">
+    <text class="title">消息标题</text>
+    <text class="time">2019年12月30日</text>
+    <text class="content">消息内容消息内容消息内容消息内容消息内容消息内容</text>
+  </view>
+</view>

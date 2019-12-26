@@ -1,11 +1,17 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/share/index",
+    "pages/money/index",
+    "pages/submitOrder/index",
+    "pages/list/index",
     "pages/order/index",
     "pages/forumDetail/index",
     "pages/forum/index",
     "pages/mess/index",
-    "pages/my/index",
-    "pages/index/index"
+    "pages/detail/index",
+    "pages/my/index"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

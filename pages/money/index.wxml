@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="main">
+  <form bindsubmit="formSubmit">
+
+    <view class="part">
+      <view class="section">
+        <view class="section_title">可提现金额：</view>
+        <text>1800元</text>
+      </view>
+      <view class="section">
+        <view class="section_tip">备注：余额≥50元可提现 不支持小数点提现</view>
+      </view>
+    </view>
+
+    <view class="part">
+      <view class="section">
+        <view class="section_title">提现金额：</view>
+        <input name="input" class="color" placeholder="请输入提现金额" />
+      </view>
+      <view class="section">
+        <view class="section_tip1">
+          提醒：提现之前，请确认下方填写的资料是正确的，以免耽误你
+          的填写申请。
+        </view>
+      </view>
+      <view class="section">
+        <view class="section_title">银行名称：</view>
+        <input name="input" class="color" placeholder="请输入银行名称" />
+      </view>
+      <view class="section">
+        <view class="section_title">银行卡号：</view>
+        <input name="input" class="color" placeholder="请输入银行卡号" />
+      </view>
+      <view class="section">
+        <view class="section_title">户主姓名：</view>
+        <input name="input" class="color" placeholder="请输入户主姓名" />
+      </view>
+    </view>
+
+    <button formType="submit">确定</button>
+  </form>
+</view>

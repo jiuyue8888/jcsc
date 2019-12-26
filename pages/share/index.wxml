@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="main">
+  <image src="../../img/share.png" class="banner"/>
+
+  <view class="part">
+    <text class="title">邀请信息</text>
+    <view class="share-p1">
+      <view>邀请码 <text> {{contents}}</text></view>
+      <text class="btn" bindtap='copyText' data-text="{{contents}}">复制</text>
+    </view>
+    <view class="share-p2">
+      <input type="text" placeholder="请输入对方的邀请码"/>
+      <text>绑定</text>
+    </view>
+    <view class="share-p3">
+      邀请好友一起使用xx平台，您的推广码一旦被新用户绑定，邀
+      请方将获得现金奖励。您邀请的人数越多，您获得的奖励金额
+      也会累加，一个用户只能绑定一次推广码。
+    </view>
+    <view class="share-p4">
+      <image src="../../img/sharebtn.png"/>
+      <text>分享给朋友</text>
+    </view>
+  </view>
+</view>

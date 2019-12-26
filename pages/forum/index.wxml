@@ -1,34 +1,20 @@
 <!--index.wxml-->
 <view class="main">
-  <view class="forumList">
-    <image src="../../img/pic.png" class="pic"/>
-    <view class="forum-content">
-      <text class="title">订单消息</text>
-      <text class="time">2019年12月30日</text>
-      <text class="content">消息内容您的订单有新动态</text>
-      <image src="../../img/forum.png" mode="widthFix" class="forum-img"/>
-      <view class="add">
-        <image src="../../img/add.png"/>
-        <text>东莞松山科技路</text>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <navigator class="forumList" url="../forumDetail/index">
+      <image src="{{item.pic}}" class="pic"/>
+      <view class="forum-content">
+        <text class="title">{{item.title}}</text>
+        <text class="time">{{item.time}}</text>
+        <text class="content">{{item.content}}</text>
+        <image src="{{item.img}}" mode="widthFix" class="forum-img"/>
+        <view class="add">
+          <image src="../../img/add.png"/>
+          <text>{{item.add}}</text>
+        </view>
+
       </view>
-
-    </view>
-  </view>
-
-
-  <view class="forumList">
-    <image src="../../img/pic.png" class="pic"/>
-    <view class="forum-content">
-      <text class="title">订单消息</text>
-      <text class="time">2019年12月30日</text>
-      <text class="content">消息内容您的订单有新动态</text>
-      <image src="../../img/forum.png" mode="widthFix" class="forum-img"/>
-      <view class="add">
-        <image src="../../img/add.png"/>
-        <text>东莞松山科技路</text>
-      </view>
-
-    </view>
-  </view>
+    </navigator>
+  </block>
 
 </view>

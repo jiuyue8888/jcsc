@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="main">
+  <form bindsubmit="formSubmit">
+
+    <view class="part">
+      <view class="section">
+        <view class="section_title">姓名：</view>
+        <input name="input" placeholder="请输入您的姓名" />
+      </view>
+      <view class="section">
+        <view class="section_title">手机号：</view>
+        <input name="input" placeholder="请输入您的手机号" />
+      </view>
+      <view class="section">
+        <view class="section_title">客户地址选择</view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="part">
+      <view class="section">
+        <view class="section_title">上传照片：</view>
+        <view class='showPic'>
+          <block wx:for="{{imageList}}" wx:for-item="image"
+                 wx:key="index" class="previewimg">
+            <block wx:if="{{index==imageList.length-1}}">
+              <image class='image' src="../../img/addimg.png" bindtap="chooseImage"/>
+            </block>
+            <block wx:else>
+              <image class='image' src="{{image}}" mode="aspectFill"
+                     data-src="{{image}}"/>
+            </block>
+
+          </block>
+        </view>
+        <view class="order">订单分类<text>{{order}}</text></view>
+      </view>
+    </view>
+    <view class="part">
+      <textarea placeholder="请在此处输入备注信息（选填）"
+                name="textarea"/>
+    </view>
+    <button formType="submit">提交申请</button>
+  </form>
+</view>

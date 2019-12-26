@@ -2,20 +2,20 @@
 <view class="main">
   <image src="../../img/banner.png" class="banner"/>
   <view class="nav">
-    <view wx:for="{{nav}}" wx:key="{{index}}">
+    <view wx:for="{{nav}}" wx:key="{{index}}" bindtap="navClick">
       <image src="{{'../../img/icon'+(index+1)+'.png'}}"/>
       <text>{{item}}</text>
     </view>
 
   </view>
-  <view class="kv">
+  <navigator class="kv" url="../share/index">
     <image src="../../img/kv.png"/>
-  </view>
+  </navigator>
   <view class="newsTips">
     <swiper autoplay="true" interval="2000" circular="true" vertical="true">
       <block wx:for="{{tips}}" wx:key="*this">
         <swiper-item>
-          <text>{{item}}</text>
+          <navigator url="../detail/index">{{item}}</navigator>
         </swiper-item>
       </block>
     </swiper>
@@ -25,14 +25,14 @@
   <view class="newsList">
     <image class="news-title" src="../../img/newt.png"/>
     <block wx:for="{{newsList}}" wx:key="{{index}}">
-      <view class="nList">
+      <navigator class="nList" url="../detail/index">
         <image src="{{item.img}}"/>
         <view class="nList-body">
           <text class="title">{{item.title}}</text>
           <text class="content">{{item.content}}</text>
           <text class="time">{{item.time}}</text>
         </view>
-      </view>
+      </navigator>
     </block>
 
   </view>
