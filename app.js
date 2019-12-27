@@ -1,4 +1,5 @@
 //app.js
+
 App({
     globalData: {
         userInfo: null,
@@ -23,10 +24,17 @@ App({
     },
     dataShow: function (api, data, call,fail) {
         const url = 'https://yds.banband.cn/' + api;
+        const key="e871d9b4e1447acfeff49cc58ec3ca6d";
+        const nData = JSON.stringify(data);
+        var utilMd5 = require('./utils/md5.js');
+        const apisign = utilMd5.hexMD5(key+JSON.stringify({user_id:'',token:''}));
         wx.request({
             url: url,
             method: 'POST',
-            data: {},
+            data: {
+                data:nData,
+                apisign:apisign
+            },
             header: {
                 'content-type': 'application/json'
             },
