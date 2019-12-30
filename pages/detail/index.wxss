@@ -39,10 +39,8 @@ padding-right:10rpx;
 display:block;
 font-size:24rpx;
 color:#ADADAD;
-line-height:48rpx;
-overflow:hidden;
-text-overflow: ellipsis;
-    white-space: nowrap;
+line-height:40rpx;
+
 }
 .status::after{
     content:'';

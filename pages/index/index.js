@@ -12,59 +12,67 @@ Page({
             "../../img/mybg.png"
         ],
         nav: ["泥土订购", "钢材订购", "砂石订购", "水泥订购"],
-        tips: ['这里是放置品台消息通告滚动条的', '111', '222'],
-        newsList: [
-            {
-                img: '../../img/kv.png',
-                title: '这里是标题1',
-                content: '在2月2日证监会例行新闻发布会上，针对今年1月沪港深基金提交申报的数量是否出',
-                time: '2019年12月1日'
-            },
-            {
-                img: '../../img/kv.png',
-                title: '这里是标题2',
-                content: '这里是内容2',
-                time: '2019年12月2日'
-            },
-            {
-                img: '../../img/kv.png',
-                title: '这里是标题3',
-                content: '这里是内容3',
-                time: '2019年12月3日'
-            },
-        ]
+        tips: [],
+        newsList: []
     },
     onLoad: function () {
+        const that = this;
         app.dataShow(app.globalData.api.newsList, {}, function (res) {
+            const arr=[];
+            const data = res.data.data;
+            data.map(function(item){
+                arr.push({
+                    img: 'https://yds.banband.cn'+item.img,
+                    title: item.title,
+                    content: item.content,
+                    id: item.id,
+                    url:item.content_url,
+                    time: app.date(item.createtime)
+                })
+            })
+            that.setData({
+                newsList:arr
+            })
+            app.data.newsList = arr;
+        }, function (res) {
             console.log(res)
+        })
+
+        app.dataShow(app.globalData.api.noticeList, {}, function (res) {
+            console.log(res)
+            const data = res.data.data;
+            const brr=[];
+            data.map(function(item){
+                brr.push({
+                    img: item.image,
+                    title: item.title,
+                    content: item.content,
+                    id: item.id,
+                    url:item.content_url,
+                    time: app.date(item.createtime)
+                })
+            })
+            that.setData({
+                tips:brr
+            })
+            app.data.noticeList = brr;
+
         }, function (res) {
             console.log(res)
         })
     },
+    getUserInfo:function(e){
+        console.log(e)
+        app.data.detail = e.detail;
+        app.login();
+    },
     navClick: function (e) {
         var id = e.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: '../submitOrder/index?order='+id
+        });
 
-        wx.login({
-            success: function (resa) {
-                console.log(resa)
-                if (resa.code) {
-                    //发起网络请求
-                    app.dataShow(app.globalData.api.login, {
-                        code: resa.code
-                    }, function (res) {
-                        console.log(res)
-                        wx.navigateTo({
-                            url: '../submitOrder/index?order='+id
-                        });
-                    }, function (res) {
-                        console.log(res)
-                    })
-                }
-            },
-            fail: function (res) {
-                console.log(res)
-            }
-        })
+
     }
 
 })

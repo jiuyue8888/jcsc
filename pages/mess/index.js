@@ -6,7 +6,7 @@ Page({
 
   },
   onLoad:function(){
-    app.dataShow(app.globalData.api.mess,'GET',function(res){
+    app.dataShow(app.globalData.api.mess,{},function(res){
       console.log(res);
     })
   }

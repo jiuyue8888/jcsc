@@ -165,3 +165,24 @@ bottom:0;
 font-size:24rpx;
 color:#A9A9A9;
 }
+button{
+position: relative;
+display: block;
+margin:0;
+padding:0;
+width:100%!important;
+height:auto;
+box-sizing: border-box;
+font-weight: normal;
+font-size: 17px;
+
+text-align: left;
+text-decoration: none;
+line-height: auto;
+border-radius: 0;
+-webkit-tap-highlight-color: transparent;
+overflow: hidden;
+color:none;
+background-color: transparent;
+
+}

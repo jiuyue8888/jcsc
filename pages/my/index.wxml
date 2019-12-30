@@ -30,7 +30,7 @@
       <text>联系客服</text>
       <image src="../../img/right1.png" class="right"/>
     </view>
-    <navigator class="partList" url="../detail/index?api=help">
+    <navigator class="partList" url="../detail/index?type=help">
       <image src="../../img/myIcon5.png" class="icon"/>
       <text>系统说明</text>
       <image src="../../img/right1.png" class="right"/>

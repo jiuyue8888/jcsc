@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="main">
-
+  <button hover-class="btn-hover" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
   <swiper class="banner" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}">
     <block wx:for="{{banner}}" wx:key="*this">
       <swiper-item>
@@ -10,20 +10,21 @@
   </swiper>
 
   <view class="nav">
-    <view wx:for="{{nav}}" wx:key="{{index}}" bindtap="navClick" data-id="{{index}}">
-      <image src="{{'../../img/icon'+(index+1)+'.png'}}"/>
+    <view wx:for="{{nav}}" wx:key="{{index}}" data-id="{{index}}">
+      <image src="{{'../../img/icon'+(index+1)+'.png'}}" />
       <text>{{item}}</text>
     </view>
-
   </view>
-  <navigator class="kv" url="../share/index">
+
+
+  <navigator class="kv" url="../share/index" hover-class="btn-hover">
     <image src="../../img/kv.png"/>
   </navigator>
   <view class="newsTips">
     <swiper autoplay="true" interval="2000" circular="true" vertical="true">
       <block wx:for="{{tips}}" wx:key="*this">
         <swiper-item>
-          <navigator url="../detail/index">{{item}}</navigator>
+          <navigator hover-class="btn-hover" url="{{'../detail/index?type=notice&id='+item.id}}">{{item.title}}</navigator>
         </swiper-item>
       </block>
     </swiper>
@@ -33,11 +34,11 @@
   <view class="newsList">
     <image class="news-title" src="../../img/newt.png"/>
     <block wx:for="{{newsList}}" wx:key="{{index}}">
-      <navigator class="nList" url="../detail/index">
+      <navigator hover-class="btn-hover" class="nList" url="{{'../detail/index?type=news&id='+item.id}}">
         <image src="{{item.img}}"/>
         <view class="nList-body">
           <text class="title">{{item.title}}</text>
-          <text class="content">{{item.content}}</text>
+          <rich-text class="content" nodes="{{item.content}}"/>
           <text class="time">{{item.time}}</text>
         </view>
       </navigator>
@@ -50,4 +51,5 @@
     <image src="../../img/img3.png"/>
   </view>
   <view class="footer">一切解释权归建材商贸所有</view>
+  </button>
 </view>

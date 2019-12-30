@@ -12,6 +12,17 @@ Page({
     wx.makePhoneCall({
       phoneNumber:'13641286838'
     })
+  },
+  onLoad:function(){
+    const that= this;
+    app.dataShow(app.globalData.api.config, {
+      name:'service_tel'
+    }, function (res) {
+      console.log(res);
+      that.setData({
+
+      })
+    })
   }
 
 })

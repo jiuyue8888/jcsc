@@ -15,7 +15,7 @@
     <view class="part">
       <view class="section">
         <view class="section_title">提现金额：</view>
-        <input name="input" class="color" placeholder="请输入提现金额" />
+        <input name="price" class="color" placeholder="请输入提现金额" />
       </view>
       <view class="section">
         <view class="section_tip1">
@@ -25,15 +25,15 @@
       </view>
       <view class="section">
         <view class="section_title">银行名称：</view>
-        <input name="input" class="color" placeholder="请输入银行名称" />
+        <input name="bank" class="color" placeholder="请输入银行名称" />
       </view>
       <view class="section">
         <view class="section_title">银行卡号：</view>
-        <input name="input" class="color" placeholder="请输入银行卡号" />
+        <input name="cardnum" class="color" placeholder="请输入银行卡号" />
       </view>
       <view class="section">
         <view class="section_title">户主姓名：</view>
-        <input name="input" class="color" placeholder="请输入户主姓名" />
+        <input name="realname" class="color" placeholder="请输入户主姓名" />
       </view>
     </view>
 
