@@ -6,7 +6,7 @@
       <view class="forum-content">
         <text class="title">{{item.title}}</text>
         <text class="time">{{item.time}}</text>
-        <text class="content">{{item.content}}</text>
+        <rich-text class="content" nodes="{{item.content}}"/>
         <image src="{{item.img}}" mode="widthFix" class="forum-img"/>
         <view class="add">
           <image src="../../img/add.png"/>

@@ -10,6 +10,7 @@ App({
             login: "api/Login/wxappLogin",
             help: "api/Assistant/helpList",//使用帮助
             newsList: "api/Assistant/newsList",//资讯列表
+            infoList: "api/Info/infoList",//订单列表/论坛列表
             postInfo: "api/Info/postInfo",//发布订单
             infoDetail: "api/Info/infoDetail",//订单详情
             mess: "api/Message/messageList",//系统消息列表
@@ -62,7 +63,7 @@ App({
         const key = "e871d9b4e1447acfeff49cc58ec3ca6d";
         const nData = JSON.stringify(Object.assign(data, {user_id: '', token: ''}));
         var utilMd5 = require('./utils/md5.js');
-        const apisign = utilMd5.hexMD5(key + nData);
+        const apisign = utilMd5(key + nData);
         wx.request({
             url: url,
             method: 'POST',

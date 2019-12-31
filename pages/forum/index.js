@@ -4,32 +4,38 @@ const app = getApp()
 
 Page({
   data: {
-    list:[
-      {
-        pic:'../../img/pic.png',
-        title:'订单消息',
-        time:'2019年12月30日',
-        content:'1消息内容您的订单有新动态',
-        img:"../../img/forum.png",
-        add:'东莞松山科技路'
-      },
-      {
-        pic:'../../img/pic.png',
-        title:'订单消息',
-        time:'2019年12月30日',
-        content:'2消息内容您的订单有新动态',
-        img:"../../img/forum.png",
-        add:'东莞松山科技路'
-      },
-      {
-        pic:'../../img/pic.png',
-        title:'订单消息',
-        time:'2019年12月30日',
-        content:'3消息内容您的订单有新动态',
-        img:"../../img/forum.png",
-        add:'东莞松山科技路'
-      }
-    ]
+    list:[]
+  },
+  onLoad:function () {
+    const that = this;
+    app.dataShow(app.globalData.api.infoList, {}, function (res) {
+      console.log(res)
+      const data = res.data.data;
+      const arr=[];
+      /*
+
+       'https://yds.banband.cn'+
+      * */
+      data.map(function(item){
+        arr.push({
+          pic:'https://yds.banband.cn'+item.user.avatar,
+          add:item.area,
+
+          img: item.images.split(',')[0],
+          title: item.name,
+          content: item.content,
+          id: item.id,
+          url:item.content_url,
+          time: app.date(item.createtime)
+        })
+      })
+      that.setData({
+        list:arr
+      })
+      app.data.infoList = arr;
+    }, function (res) {
+      console.log(res)
+    })
   }
 
 })
