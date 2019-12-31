@@ -11,7 +11,7 @@
   <navigator class="messList" url="../detail/index">
     <image src="../../img/mess2.png" class="messIcon"/>
     <view class="mess-content">
-      <text class="title">订单消息</text>
+      <text class="title">系统消息</text>
       <text class="content status">消息内容您好，本平台有相关的功能进行更新，届时....</text>
       <text class="time">2019年12月02日</text>
     </view>

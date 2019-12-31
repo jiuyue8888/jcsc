@@ -10,7 +10,7 @@
     </view>
     <view class="share-p2">
       <input type="text" placeholder="请输入对方的邀请码"/>
-      <text>绑定</text>
+      <text bindtap='inviteFun'>绑定</text>
     </view>
     <view class="share-p3">
       邀请好友一起使用xx平台，您的推广码一旦被新用户绑定，邀
@@ -19,7 +19,7 @@
     </view>
     <view class="share-p4">
       <image src="../../img/sharebtn.png"/>
-      <text>分享给朋友</text>
+      <button open-type='share'>分享给朋友</button>
     </view>
   </view>
 </view>

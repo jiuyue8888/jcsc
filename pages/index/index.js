@@ -17,6 +17,9 @@ Page({
     },
     onLoad: function () {
         const that = this;
+
+
+        //获取资讯列表
         app.dataShow(app.globalData.api.newsList, {}, function (res) {
             const arr=[];
             const data = res.data.data;
@@ -38,6 +41,7 @@ Page({
             console.log(res)
         })
 
+        //  获取公告
         app.dataShow(app.globalData.api.noticeList, {}, function (res) {
             console.log(res)
             const data = res.data.data;

@@ -37,26 +37,18 @@ App({
                 console.log(that.data.detail)
                 if (resa.code) {
                     //发起网络请求
-                    wx.request({
-                        url: 'https://yds.banband.cn/' + that.globalData.api.login,
-                        method: 'POST',
-                        data: {
-                            code: resa.code,
-                            rawData:that.data.detail.rawData,
-                            signature:that.data.detail.signature,
-                            encryptedData:that.data.detail.encryptedData,
-                            iv:that.data.detail.iv
-                        },
-                        header: {
-                            'content-type': 'application/json'
-                        },
-                        success: function (res) {
-                            console.log(res)
-                        },
-                        fail: function (res) {
-                            console.log(res)
-                        }
+                    that.dataShow(that.globalData.api.login,{
+                        code: resa.code,
+                        rawData:that.data.detail.rawData,
+                        signature:that.data.detail.signature,
+                        encryptedData:that.data.detail.encryptedData,
+                        iv:that.data.detail.iv
+                    },function(res){
+                        console.log(res)
+                    },function(res){
+                        console.log(res)
                     })
+
 
                 }
             },
@@ -70,7 +62,7 @@ App({
         const key = "e871d9b4e1447acfeff49cc58ec3ca6d";
         const nData = JSON.stringify(Object.assign(data, {user_id: '', token: ''}));
         var utilMd5 = require('./utils/md5.js');
-        const apisign = utilMd5.hexMD5(key + JSON.stringify({user_id: '', token: ''}));
+        const apisign = utilMd5.hexMD5(key + nData);
         wx.request({
             url: url,
             method: 'POST',
@@ -79,7 +71,7 @@ App({
                 apisign: apisign
             },
             header: {
-                'content-type': 'application/json'
+                'content-type': 'application/x-www-form-urlencoded'
             },
             success: function (res) {
                 call(res)

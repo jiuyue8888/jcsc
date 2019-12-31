@@ -82,6 +82,7 @@ background:#594EFF;
 color:#fff;
 font-size:30rpx;
 text-align:center;
+z-index:2;
 }
 .share-p2 text{
 background:linear-gradient(to right, #FF8C56, #F95F38);
@@ -109,13 +110,17 @@ color:#B6B6B6;
     width:100%;
     height:100%;
 }
-.share-p4 text{
+.share-p4 button{
 position:absolute;
 top:0;
 left:0;
+z-index:2;
 display:block;
 width:100%;
 height:100%;
-
+color:#fff;
+    font-size:30rpx;
+    line-height:90rpx;
+background:transparent;
 }
 
