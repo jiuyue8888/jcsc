@@ -46,6 +46,8 @@ App({
                         iv:that.data.detail.iv
                     },function(res){
                         console.log(res)
+                        that.globalData.user_id = res.data.data.user_id;
+                        that.globalData.token = res.data.data.token;
                     },function(res){
                         console.log(res)
                     })
@@ -61,7 +63,15 @@ App({
     dataShow: function (api, data, call, fail) {
         const url = 'https://yds.banband.cn/' + api;
         const key = "e871d9b4e1447acfeff49cc58ec3ca6d";
-        const nData = JSON.stringify(Object.assign(data, {user_id: '', token: ''}));
+
+        const that = this;
+        console.log(that.globalData)
+        const nData = JSON.stringify(Object.assign(data, {
+            user_id: that.globalData.user_id,
+            token: that.globalData.token
+        }));
+        console.log(nData);
+
         var utilMd5 = require('./utils/md5.js');
         const apisign = utilMd5(key + nData);
         wx.request({

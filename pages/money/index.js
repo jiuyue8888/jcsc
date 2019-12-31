@@ -12,6 +12,9 @@ Page({
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     app.dataShow(app.globalData.api.withdraw,e.detail.value,function(res){
       console.log(res)
+      wx.showModal({
+        content:res.info
+      })
     },function(res){
       console.log(res)
     })
