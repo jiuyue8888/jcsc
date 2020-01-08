@@ -28,6 +28,34 @@ Page({
                     }
                 });
                 break;
+            case 'mess':
+                const id1 = options.id;
+                app.data.messList.map(function (item) {
+                    if (id1 == item.id){
+                        that.setData({
+                            detail:{
+                                title:item.title,
+                                time:item.time,
+                                content:item.content
+                            }
+                        })
+                    }
+                });
+                break;
+            case 'message':
+                const id2 = options.id;
+                app.data.messageList.map(function (item) {
+                    if (id2 == item.id){
+                        that.setData({
+                            detail:{
+                                title:item.title,
+                                time:item.time,
+                                content:item.content
+                            }
+                        })
+                    }
+                });
+                break;
             case 'notice':
                 app.data.noticeList.map(function (item) {
                     if (options.id == item.id){

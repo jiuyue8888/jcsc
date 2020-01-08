@@ -30,50 +30,30 @@ App({
         const data=new Date(timestamp*1000);
         return data.getFullYear()+'年'+(data.getMonth()+1)+'月'+data.getDate()+'日'
     },
-    login:function(){
-        const that = this;
-        wx.login({
-            success: function (resa) {
-                console.log(resa)
-                console.log(that.data.detail)
-                if (resa.code) {
-                    //发起网络请求
-                    that.dataShow(that.globalData.api.login,{
-                        code: resa.code,
-                        rawData:that.data.detail.rawData,
-                        signature:that.data.detail.signature,
-                        encryptedData:that.data.detail.encryptedData,
-                        iv:that.data.detail.iv
-                    },function(res){
-                        console.log(res)
-                        that.globalData.user_id = res.data.data.user_id;
-                        that.globalData.token = res.data.data.token;
-                    },function(res){
-                        console.log(res)
-                    })
 
-
-                }
-            },
-            fail: function (res) {
-                console.log(res)
-            }
-        })
-    },
-    dataShow: function (api, data, call, fail) {
+    dataShow: function (api, data, call, fail,type) {
         const url = 'https://yds.banband.cn/' + api;
         const key = "e871d9b4e1447acfeff49cc58ec3ca6d";
 
         const that = this;
-        console.log(that.globalData)
-        const nData = JSON.stringify(Object.assign(data, {
-            user_id: that.globalData.user_id,
-            token: that.globalData.token
-        }));
-        console.log(nData);
+        const user_id = that.data.user_id
+        const token = that.data.token
+        var nData = data
+
+        if(type=='forum'){
+            nData = JSON.stringify(Object.assign(data, {
+                user_id: '',
+                token: ''
+            }));
+        }else{
+            nData = JSON.stringify(Object.assign(data, {
+                user_id: user_id?user_id:'',
+                token: token?token:''
+            }));
+        }
 
         var utilMd5 = require('./utils/md5.js');
-        const apisign = utilMd5(key + nData);
+        const apisign = utilMd5(key+nData);
         wx.request({
             url: url,
             method: 'POST',

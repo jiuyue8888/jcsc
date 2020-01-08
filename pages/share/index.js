@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    contents:'45T4NL',
+    contents:app.globalData.invitecode,
   },
   copyText: function (e) {
     console.log(e)
@@ -23,12 +23,26 @@ Page({
     })
   },
   onLoad:function(){
-    wx.showShareMenu();
+    //wx.showShareMenu();
+    this.setData({
+      contents:app.data.invitecode,
+    })
   },
-  onShareAppMessage:function(){
+  onShareAppMessage:function(res){
+    console.log(res)
+
     return {
       title:'123',
-      path:'pages/share/index'
+      path:'pages/share/index',
+      success: function(res){
+        console.log(res)
+      },
+      fail: function(){
+        console.log(res)
+      },
+      complete: function(res){
+      console.log(res)
+    }
     }
   },
   inviteFun:function(){
@@ -37,8 +51,8 @@ Page({
       userid:app.globalData.user_id?app.globalData.user_id:''
     },function(res){
       console.log(res)
-      wx.showModal({
-        content:res.data.info
+      wx.showToast({
+        title:res.data.info
       })
     },function(){
       console.log(res)

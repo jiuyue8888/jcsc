@@ -2,8 +2,8 @@
 <view class="main">
   <view class="user">
     <image src="../../img/mybg.png" class="banner"/>
-    <image src="{{pic}}" class="pic"/>
-    <text>{{name}}</text>
+    <image src="{{avatar}}" class="pic"/>
+    <text>{{nickname}}</text>
   </view>
 
   <view class="part">
@@ -36,4 +36,5 @@
       <image src="../../img/right1.png" class="right"/>
     </navigator>
   </view>
+  <tab id="comp"/>
 </view>

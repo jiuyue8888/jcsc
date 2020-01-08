@@ -42,6 +42,10 @@ color:#ADADAD;
 line-height:40rpx;
 
 }
+.content img,
+.content image{
+max-width:100%;
+}
 .status::after{
     content:'';
     position:absolute;

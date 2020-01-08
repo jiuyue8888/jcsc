@@ -5,47 +5,28 @@ const app = getApp()
 Page({
   data: {
     list:[
-      {
-        title:'钢材订单',
-        name:'XXX',
-        phone:'13099993333',
-        time:'2019-08-02 12:00',
-        status:"1"
-      },
-      {
-        title:'钢材订单',
-        name:'XXX',
-        phone:'13099993333',
-        time:'2019-08-02 12:00',
-        status:"2"
-      },
-      {
-        title:'钢材订单',
-        name:'XXX',
-        phone:'13099993333',
-        time:'2019-08-02 12:00',
-        status:"3"
-      }
+
     ]
   },
   onLoad:function(){
 
     const that = this;
-    app.dataShow(app.globalData.api.orderList, {}, function (res) {
+
+    app.dataShow(app.globalData.api.infoList, {}, function (res) {
       console.log(res)
       const data = res.data.data;
       const arr=[];
-      /*
 
-       'https://yds.banband.cn'+
-       * */
       data.map(function(item){
         arr.push({
           pic:'https://yds.banband.cn'+item.user.avatar,
           add:item.area,
-
+          name:item.user.nickname,
+          phone:item.phone,
+          text:item.status_text,
+          status:item.status,
           img: item.images.split(',')[0],
-          title: item.name,
+          title: item.category_name,
           content: item.content,
           id: item.id,
           url:item.content_url,
@@ -59,6 +40,8 @@ Page({
     }, function (res) {
       console.log(res)
     })
+
+
   }
 
 })

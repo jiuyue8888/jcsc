@@ -5,7 +5,7 @@
     <view class="part">
       <view class="section">
         <view class="section_title">可提现金额：</view>
-        <text>1800元</text>
+        <text>{{money}}元</text>
       </view>
       <view class="section">
         <view class="section_tip">备注：余额≥50元可提现 不支持小数点提现</view>

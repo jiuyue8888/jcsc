@@ -74,10 +74,20 @@ color:#ccc;
 box-sizing:border-box;
 padding:30rpx;
 }
-.address input{
+.address{
+position:absolute;
+top:0;
 right:20rpx;
+z-index:3;
+height: 80rpx;
+width: 100%;
+
+}
+.address input{
+right:0;
 left:auto;
 text-align:right;
+padding-left:200rpx;
 }
 button{
 display:block;
@@ -89,6 +99,6 @@ padding:0;
 font-size:34rpx;
 font-weight:normal;
 line-height:85rpx;
-margin:60rpx auto 0;
+margin:60rpx auto 60rpx;
 background:#79BDF9;
 }

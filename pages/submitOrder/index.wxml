@@ -5,16 +5,16 @@
     <view class="part">
       <view class="section">
         <view class="section_title">姓名：</view>
-        <input name="input" placeholder="请输入您的姓名" />
+        <input name="name" placeholder="请输入您的姓名" />
       </view>
       <view class="section">
         <view class="section_title">手机号：</view>
-        <input name="input" placeholder="请输入您的手机号" />
+        <input name="phone" placeholder="请输入您的手机号" />
       </view>
       <view class="section">
         <view class="section_title">客户地址选择</view>
         <view class='address' bindtap='onChangeAddress'>
-         <input class='choose-address' placeholder='请选取地点' value='{{chooseAddress}}'/>
+         <input name="area" class='choose-address' disabled="true" placeholder='请选取地点' value='{{chooseAddress}}'/>
         </view>
       </view>
     </view>
@@ -46,7 +46,7 @@
     </view>
     <view class="part">
       <textarea placeholder="请在此处输入备注信息（选填）"
-                name="textarea"/>
+                name="remarks"/>
     </view>
     <button formType="submit">提交申请</button>
   </form>

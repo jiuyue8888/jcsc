@@ -1,31 +1,47 @@
 <!--index.wxml-->
 <view class="main">
   <view class="forumList">
-    <image src="../../img/pic.png" class="pic"/>
+    <image src="{{avatar}}" class="pic"/>
     <view class="forum-content">
-      <text class="title">订单消息</text>
-      <text class="time">2019年12月30日</text>
-      <text class="content">消息内容您的订单有新动态</text>
-      <image src="../../img/forum.png" mode="widthFix" class="forum-img"/>
+      <text class="title">{{category_name}}</text>
+      <text class="time">{{createtime}}</text>
+      <text class="content">{{content}}</text>
+
+      <block wx:for="{{images}}" wx:key="{{index}}">
+        <image src="{{item}}" mode="widthFix" class="forum-img" bindtap="clickImg" data-url="{{item}}"/>
+      </block>
+
       <view class="add">
         <image src="../../img/add.png"/>
-        <text>东莞松山科技路</text>
+        <text>{{area}}</text>
       </view>
 
     </view>
+    <block wx:if="{{st==2}}">
+      <text class="pay" wx:if="{{status}}">已支付</text>
+    </block>
+    <block wx:if="{{st==1}}">
+      <text class="pay" bindtap="payClick" wx:if="{{status}}">支付定金</text>
+    </block>
+
   </view>
 
 
+  <block wx:if="{{imgs!=''}}">
   <view class="forumList">
     <image src="../../img/pic.png" class="pic"/>
     <view class="forum-content">
       <text class="title">平台客服</text>
-      <text class="time">2019年12月30日</text>
-      <text class="content">消息内容您的订单有新动态消息内容您的订单有新动态消息内容您的订单有新动态消息内容您的订单有新动态消息内容您的订单有新动态消息内容您的订单有新动态</text>
-      <image src="../../img/forum.png" mode="widthFix" class="forum-img"/>
+      <text class="time">{{time}}</text>
+      <text class="content">{{reply.content}}</text>
+      <block wx:for="{{imgs}}" wx:key="{{index}}">
+        <image src="{{'https://yds.banband.cn'+item}}" mode="widthFix" class="forum-img" bindtap="clickImg"
+               data-url="{{'https://yds.banband.cn'+item}}"/>
+      </block>
+
 
 
     </view>
   </view>
-
+  </block>
 </view>

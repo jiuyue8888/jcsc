@@ -1,0 +1,8 @@
+<view class="tabs">
+    <block wx:for="{{nameList}}" wx:key="index">
+        <view class="{{curr==index?'curr tab':'tab'}}" data-url="{{item.pagePath}}" bindtap="btnClick">
+            <image src="{{curr==index?item.selectedIconPath:item.iconPath}}"/>
+            <text>{{item.text}}</text>
+        </view>
+    </block>
+</view>

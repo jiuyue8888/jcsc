@@ -4,22 +4,21 @@
   <swiper class="banner" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}">
     <block wx:for="{{banner}}" wx:key="*this">
       <swiper-item>
-        <image src="{{item}}" mode="aspectFill"/>
+        <image src="{{item}}" mode="aspectFit"/>
       </swiper-item>
     </block>
   </swiper>
 
   <view class="nav">
-    <view wx:for="{{nav}}" wx:key="{{index}}" data-id="{{index}}">
-      <image src="{{'../../img/icon'+(index+1)+'.png'}}" />
-      <text>{{item}}</text>
+    <view wx:for="{{nav}}" wx:key="{{index}}" data-id="{{index}}" bindtap="navClick">
+      <image src="{{item.img}}" />
+      <text>{{item.name}}</text>
     </view>
   </view>
 
-
-  <navigator class="kv" url="../share/index" hover-class="btn-hover">
+  <view class="kv" bindtap="shareClick" hover-class="btn-hover">
     <image src="../../img/kv.png"/>
-  </navigator>
+  </view>
   <view class="newsTips">
     <swiper autoplay="true" interval="2000" circular="true" vertical="true">
       <block wx:for="{{tips}}" wx:key="*this">
@@ -35,7 +34,7 @@
     <image class="news-title" src="../../img/newt.png"/>
     <block wx:for="{{newsList}}" wx:key="{{index}}">
       <navigator hover-class="btn-hover" class="nList" url="{{'../detail/index?type=news&id='+item.id}}">
-        <image src="{{item.img}}"/>
+        <image src="{{item.img}}" mode="aspectFill"/>
         <view class="nList-body">
           <text class="title">{{item.title}}</text>
           <rich-text class="content" nodes="{{item.content}}"/>
@@ -51,5 +50,6 @@
     <image src="../../img/img3.png"/>
   </view>
   <view class="footer">一切解释权归建材商贸所有</view>
+    <tab id="comp"/>
   </button>
 </view>

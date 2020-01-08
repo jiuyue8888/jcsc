@@ -40,6 +40,15 @@ color:#666;
            background:#F5DC77;
 
            }
+.noOrder{
+margin: 40rpx;
+width: 100%;
+text-align: center;
+display: block;
+color: #999;
+font-size: 24rpx;
+
+}
 .status{
 position:absolute;
 top:20rpx;

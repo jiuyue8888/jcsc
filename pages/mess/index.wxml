@@ -1,19 +1,37 @@
 <!--index.wxml-->
 <view class="main">
-  <navigator class="messList" url="../detail/index">
-    <image src="../../img/mess1.png" class="messIcon"/>
-    <view class="mess-content">
-      <text class="title">订单消息</text>
-      <text class="content">消息内容您的订单有新动态</text>
-    </view>
-  </navigator>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="messList" bindtap="messClick" data-type="{{item.type}}" data-id="{{item.id}}">
+      <block wx:if="{{item.type==1}}">
+        <image src="../../img/mess2.png" class="messIcon"/>
+      </block>
+      <block wx:else>
+        <image src="../../img/mess1.png" class="messIcon"/>
+      </block>
 
-  <navigator class="messList" url="../detail/index">
-    <image src="../../img/mess2.png" class="messIcon"/>
-    <view class="mess-content">
-      <text class="title">系统消息</text>
-      <text class="content status">消息内容您好，本平台有相关的功能进行更新，届时....</text>
-      <text class="time">2019年12月02日</text>
+      <view class="mess-content">
+        <text class="title">{{item.title}}</text>
+        <text class="{{item.status==0?'content status':'content'}}">{{item.content}}</text>
+        <text class="time">{{item.time}}</text>
+      </view>
     </view>
-  </navigator>
+  </block>
+  <block wx:for="{{list1}}" wx:key="{{index}}">
+    <view class="messList" bindtap="messClick" data-type="{{item.type}}"
+          data-id="{{item.id}}" data-mid="{{item.mid}}">
+      <block wx:if="{{item.type==1}}">
+        <image src="../../img/mess2.png" class="messIcon"/>
+      </block>
+      <block wx:else>
+        <image src="../../img/mess1.png" class="messIcon"/>
+      </block>
+
+      <view class="mess-content">
+        <text class="title">{{item.title}}</text>
+        <text class="{{item.status==0?'content status':'content'}}">{{item.content}}</text>
+        <text class="time">{{item.time}}</text>
+      </view>
+    </view>
+  </block>
+  <tab id="comp"/>
 </view>

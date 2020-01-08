@@ -19,6 +19,7 @@ top:0;
 left:0;
 width:66rpx;
 height:66rpx;
+border-radius:50%;
 }
 .forum-content{
 position:relative;
@@ -66,6 +67,18 @@ line-height:60rpx;
 padding-bottom:20rpx;
 box-sizing:border-box;
 padding-left:20rpx;
+}
+.pay{
+position:absolute;
+top:0;
+right:0;
+width:141rpx;
+height:54rpx;
+text-align:center;
+color:#fff;
+font-size:26rpx;
+line-height:54rpx;
+background:#F5DC77;
 }
 .add image{
 width:16rpx;

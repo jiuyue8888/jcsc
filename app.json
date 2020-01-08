@@ -19,37 +19,11 @@
     "navigationBarTitleText": "建材商城",
     "navigationBarTextStyle": "black"
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于提交订单"
+    }
+  },
   "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "color": "#040404",
-    "selectedColor": "#040404",
-
-    "list": [
-      {
-        "selectedIconPath": "img/nav-hover-1.png",
-        "iconPath": "img/nav-1.png",
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "selectedIconPath": "img/nav-hover-2.png",
-        "iconPath": "img/nav-2.png",
-        "pagePath": "pages/forum/index",
-        "text": "论坛"
-      },
-      {
-        "selectedIconPath": "img/nav-hover-3.png",
-        "iconPath": "img/nav-3.png",
-        "pagePath": "pages/mess/index",
-        "text": "消息"
-      },
-      {
-        "selectedIconPath": "img/nav-hover-4.png",
-        "iconPath": "img/nav4.png",
-        "pagePath": "pages/my/index",
-        "text": "我的"
-      }
-    ]
-  }
+  "sitemapLocation": "sitemap.json"
 }
